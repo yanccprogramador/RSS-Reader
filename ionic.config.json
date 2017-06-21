@@ -1,0 +1,8 @@
+{
+  "name": "testeIonic",
+  "app_id": "2057b935",
+  "type": "ionic1",
+  "watchPatterns": [
+    "scss/**/*"
+  ]
+}
