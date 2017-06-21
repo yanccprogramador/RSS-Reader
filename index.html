@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="cordova.js"></script>
+    <!-- your app's js -->
+    <script src="js/xml2json.js"></script>
+
+    <script src="lib/angular-x2js/dist/x2js.min.js"></script>
+    <script src="js/app.js"></script>
+  </head>
+  <body ng-app="starter"  ng-controller="FeedControl">
+    <ion-pane>
+      <ion-header-bar class="bar-positive">
+        <h1 class="title">Feed Reader</h1>
+      </ion-header-bar>
+      <ion-content >
+         <input type="text" id="url" name="url" ng-model="url" >
+         <input type="submit" ng-click="myClick(url)"  value="enviar" class="button"/>
+         <div class="list">
+            <a ng-repeat="entry in entries" class="item" ng-click="browse(entry.link)">
+               <b>{{entry.title}}</b><br>
+               <span ng-bind-html="entry.description"></span>
+             </a>
+             
+       </div>
+      </ion-content>
+    </ion-pane>
+  </body>
+</html>
